@@ -19,6 +19,7 @@
         .btn-group {
             margin-right: 0.5rem;
         }
+
         select {
             margin: 10px;
             background: rgba(170, 212, 164, 0.068);
@@ -170,7 +171,7 @@
                             <br><br>
 
                             <label>5. Select Bats Men :</label>
-                            <input type="checkbox" onchange="updateBatsMen_ddl()">
+                            <input type="checkbox" id="bat_team_checkbox" onchange="updateBatsMen_ddl()">
                             <div class="container p-3 my-3 text-dark bg-light p-10 rounded container-sm border">
                                 <fieldset>
                                     <p> Select the Players who Bat in 6-Overs:</p>
@@ -211,12 +212,12 @@
                             </div>
 
                             <label>6. Select Bowlers :</label>
-                            <input type="checkbox" onchange="updateBowlers_ddl()">
+                            <input type="checkbox" id="bowl_team_checkbox" onchange="updateBowlers_ddl()">
                             <div class="container p-3 my-3 text-dark bg-light p-10 rounded container-sm border">
                                 <fieldset>
                                     <p> Select Bowlers Bowl in 6-Overs :</p>
-                                    <label>* Bowling in over-1 : </label> <select id="bowler" name="fetchValue">
-                                        <option value="None" selected="selected">None</option>
+                                    <label>* Bowling in over-1 : </label> <select id="bowler" name="fetchValue" >
+                                        <option value="None" selected="selected" >None</option>
                                     </select>
                                     <label>* Bowling in over-2 : </label> <select id="bowler" name="fetchValue">
                                         <option value="None" selected="selected">None</option>
@@ -726,6 +727,14 @@
         }
 
         function updateBatsMen_ddl() {
+            var check_battingTeam = document.getElementById("batting_team");
+            if (check_battingTeam.value == 'None') {
+                alert("Please select the Batting team and then select players who will play in 1st 6-overs");
+
+                document.getElementById("bat_team_checkbox").checked = false
+
+            }
+
             var selected_bat_team = bat_sel.options[bat_sel.selectedIndex].value;
             console.log(selected_bat_team);
             for (let i = 0; i < batsmen_sel.length; i++) {
@@ -738,12 +747,20 @@
         };
 
         function updateBowlers_ddl() {
+            var check_bowlTeam = document.getElementById("bowling_team");
+            if (check_bowlTeam.value == 'None') {
+                alert("Please select the Bowling team and then select players who bowl in 1st 6-overs");
+                document.getElementById("bowl_team_checkbox").checked = false
+
+            }
             var selected_bow_team = bow_sel.options[bow_sel.selectedIndex].value;
             console.log(selected_bow_team);
             for (let i = 0; i < bowlers_sel.length; i++) {
                 //console.log(bowlers_sel[i])
                 for (let x in bowling_team_Object[selected_bow_team]) {
-                    bowlers_sel[i].options[bowlers_sel[i].options.length] = new Option(bowling_team_Object[selected_bow_team][x], bowling_team_Object[selected_bow_team][x])
+                    bowlers_sel[i].options[bowlers_sel[i].options.length] = new Option(bowling_team_Object[selected_bow_team][x], bowling_team_Object[selected_bow_team][x]);
+                    
+
                 }
 
             }
