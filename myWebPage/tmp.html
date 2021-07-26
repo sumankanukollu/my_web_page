@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <div>
+        <input type="button" value='Win History' onclick='win()'>
+        <input type="button" class="btn btn-dark" id="btn2" value='Venue vs Score' onclick='venueScore()'>
+        <input type="button" class="btn btn-dark" id="btn2" value='Innings vs Score' onclick="inningsScore()">
+        <img id="displayhere"  />
+    </div>
+
+    <script>
+
+        function win() {
+            document.getElementById('displayhere').src="https://suman-projects.s3.ap-south-1.amazonaws.com/1.png"
+        }
+
+        function venueScore() {
+            document.getElementById('displayhere').src="https://suman-projects.s3.ap-south-1.amazonaws.com/2.png"
+        }
+
+        
+        function inningsScore() {
+            document.getElementById('displayhere').src="https://suman-projects.s3.ap-south-1.amazonaws.com/3.png"
+        }
+
+        
+    </script>
+</body>
+
+</html>
