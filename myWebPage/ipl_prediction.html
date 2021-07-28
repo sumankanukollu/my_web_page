@@ -170,11 +170,11 @@
                             </select>
                             <br><br>
 
-                            <label>5. Select Bats Men :</label>
+                            <label>5. You want to select Bats Men? :</label>
                             <input type="checkbox" id="bat_team_checkbox" onchange="updateBatsMen_ddl()">
                             <div class="container p-3 my-3 text-dark bg-light p-10 rounded container-sm border">
                                 <fieldset>
-                                    <p> Select the Players who Bat in 6-Overs:</p>
+                                    <p> Select the batsmen only who Bat in 6-Overs : </p>
                                     <label>* Batting at possition -1 : </label> <select id="batsmen" name="fetchValue">
                                         <option value="None" selected="selected">None</option>
                                     </select>
@@ -211,28 +211,28 @@
                                     </select>
                             </div>
 
-                            <label>6. Select Bowlers :</label>
+                            <label>6. You want to select Bowlers? :</label>
                             <input type="checkbox" id="bowl_team_checkbox" onchange="updateBowlers_ddl()">
                             <div class="container p-3 my-3 text-dark bg-light p-10 rounded container-sm border">
                                 <fieldset>
-                                    <p> Select Bowlers Bowl in 6-Overs :</p>
-                                    <label>* Bowling in over-1 : </label> <select id="bowler" name="fetchValue">
+                                    <p> Select the Bowlers only who Bowl in 6-Overs :</p>
+                                    <label>* Bowler in over-1 : </label> <select id="bowler" name="fetchValue">
                                         <option value="None" selected="selected">None</option>
                                     </select>
-                                    <label>* Bowling in over-2 : </label> <select id="bowler" name="fetchValue">
+                                    <label>* Bowler in over-2 : </label> <select id="bowler" name="fetchValue">
                                         <option value="None" selected="selected">None</option>
                                     </select>
-                                    <label>* Bowling in over-3 : </label> <select id="bowler" name="fetchValue">
+                                    <label>* Bowler in over-3 : </label> <select id="bowler" name="fetchValue">
                                         <option value="None" selected="selected">None</option>
                                     </select>
                                     <br><br>
-                                    <label>* Bowling in over-4 : </label> <select id="bowler" name="fetchValue">
+                                    <label>* Bowler in over-4 : </label> <select id="bowler" name="fetchValue">
                                         <option value="None" selected="selected">None</option>
                                     </select>
-                                    <label>* Bowling in over-5 : </label> <select id="bowler" name="fetchValue">
+                                    <label>* Bowler in over-5 : </label> <select id="bowler" name="fetchValue">
                                         <option value="None" selected="selected">None</option>
                                     </select>
-                                    <label>* Bowling in over-6 : </label> <select id="bowler" name="fetchValue">
+                                    <label>* Bowler in over-6 : </label> <select id="bowler" name="fetchValue">
                                         <option value="None" selected="selected">None</option>
                                     </select>
 
@@ -721,9 +721,9 @@
             }
 
             var selected_bat_team = bat_sel.options[bat_sel.selectedIndex].value;
-            console.log(selected_bat_team);
+            console.log('### selected batting team is : ' + selected_bat_team);
             for (let i = 0; i < batsmen_sel.length; i++) {
-                console.log(batsmen_sel[i])
+                //console.log(batsmen_sel[i])
                 for (let x in batting_team_Object[selected_bat_team]) {
                     batsmen_sel[i].options[batsmen_sel[i].options.length] = new Option(batting_team_Object[selected_bat_team][x], batting_team_Object[selected_bat_team][x])
                 }
@@ -739,7 +739,7 @@
 
             }
             var selected_bow_team = bow_sel.options[bow_sel.selectedIndex].value;
-            console.log(selected_bow_team);
+            console.log('### selected bowling team is : ' + selected_bow_team);
             for (let i = 0; i < bowlers_sel.length; i++) {
                 //console.log(bowlers_sel[i])
                 for (let x in bowling_team_Object[selected_bow_team]) {
@@ -751,7 +751,6 @@
             }
 
         };
-
 
         function awsiplpredict(url) {
             var consolidated_input = [];
