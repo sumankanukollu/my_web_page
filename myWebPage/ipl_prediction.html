@@ -216,8 +216,8 @@
                             <div class="container p-3 my-3 text-dark bg-light p-10 rounded container-sm border">
                                 <fieldset>
                                     <p> Select Bowlers Bowl in 6-Overs :</p>
-                                    <label>* Bowling in over-1 : </label> <select id="bowler" name="fetchValue" >
-                                        <option value="None" selected="selected" >None</option>
+                                    <label>* Bowling in over-1 : </label> <select id="bowler" name="fetchValue">
+                                        <option value="None" selected="selected">None</option>
                                     </select>
                                     <label>* Bowling in over-2 : </label> <select id="bowler" name="fetchValue">
                                         <option value="None" selected="selected">None</option>
@@ -322,39 +322,24 @@
         var btn = document.getElementById('btn');
         var fetchValue_sel = document.getElementsByName("fetchValue");
 
-        var venue_Object = ['M Chinnaswamy Stadium',
-            'Punjab Cricket Association Stadium, Mohali',
-            'Feroz Shah Kotla',
-            'Eden Gardens',
-            'Wankhede Stadium',
-            'Sawai Mansingh Stadium',
-            'Rajiv Gandhi International Stadium',
-            'MA Chidambaram Stadium',
-            'Dr DY Patil Sports Academy',
-            'Newlands',
-            "St George's Park",
-            'Kingsmead',
-            'SuperSport Park',
-            'Buffalo Park',
-            'New Wanderers Stadium',
-            'De Beers Diamond Oval',
-            'OUTsurance Oval',
-            'Brabourne Stadium',
-            'Sardar Patel Stadium, Motera',
-            'Barabati Stadium',
+        var venue_Object = ['M Chinnaswamy Stadium', 'Punjab Cricket Association Stadium',
+            'Feroz Shah Kotla', 'Eden Gardens', 'Wankhede Stadium',
+            'Sawai Mansingh Stadium', 'Rajiv Gandhi International Stadium',
+            'MA Chidambaram Stadium', 'Dr DY Patil Sports Academy', 'Newlands',
+            "St George's Park", 'Kingsmead', 'SuperSport Park', 'Buffalo Park',
+            'New Wanderers Stadium', 'De Beers Diamond Oval',
+            'OUTsurance Oval', 'Brabourne Stadium',
+            'Sardar Patel Stadium, Motera', 'Barabati Stadium',
             'Vidarbha Cricket Association Stadium, Jamtha',
             'Himachal Pradesh Cricket Association Stadium',
             'Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium',
             'Subrata Roy Sahara Stadium',
             'Shaheed Veer Narayan Singh International Stadium',
-            'JSCA International Stadium Complex',
-            'Sheikh Zayed Stadium',
-            'Sharjah Cricket Stadium',
-            'Dubai International Cricket Stadium',
+            'JSCA International Stadium Complex', 'Sheikh Zayed Stadium',
+            'Sharjah Cricket Stadium', 'Dubai International Cricket Stadium',
             'Maharashtra Cricket Association Stadium',
-            'Punjab Cricket Association Stadium',
-            'Holkar Cricket Stadium',
-            'Arun Jaitley Stadium'];
+            'Holkar Cricket Stadium', 'Arun Jaitley Stadium, Delhi',
+            'Narendra Modi Stadium, Ahmedabad'];
 
         var batting_team_Object = {
             'Chennai Super Kings': ['PA Patel', 'ML Hayden', 'MEK Hussey', 'MS Dhoni', 'SK Raina',
@@ -759,7 +744,7 @@
                 //console.log(bowlers_sel[i])
                 for (let x in bowling_team_Object[selected_bow_team]) {
                     bowlers_sel[i].options[bowlers_sel[i].options.length] = new Option(bowling_team_Object[selected_bow_team][x], bowling_team_Object[selected_bow_team][x]);
-                    
+
 
                 }
 
